@@ -1,4 +1,4 @@
-package com.example.ahmed.mybakingapp.Activity;
+package com.example.ahmed.mybakingapp;
 
 
 import android.support.test.espresso.ViewInteraction;
@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewParent;
 
+import com.example.ahmed.mybakingapp.Activity.MainActivity;
 import com.example.ahmed.mybakingapp.R;
 
 import org.hamcrest.Description;

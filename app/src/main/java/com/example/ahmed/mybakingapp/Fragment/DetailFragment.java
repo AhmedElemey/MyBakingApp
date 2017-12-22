@@ -113,7 +113,7 @@ public class DetailFragment extends Fragment {
                 exoPlayerView.setVisibility(View.VISIBLE);
 
             mediaUrl = mStep.get(mID).getVideoURL();
-            showPlayer(mediaUrl);
+
         } else {
             if (mNoVideo.getVisibility() == View.GONE)
                 mNoVideo.setVisibility(View.VISIBLE);

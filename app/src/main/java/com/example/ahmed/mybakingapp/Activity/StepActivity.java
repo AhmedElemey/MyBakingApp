@@ -3,9 +3,12 @@ package com.example.ahmed.mybakingapp.Activity;
 import android.content.Intent;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v4.app.NavUtils;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.widget.FrameLayout;
+import android.widget.Toast;
 
 import com.example.ahmed.mybakingapp.Adapter.StepAdapter;
 import com.example.ahmed.mybakingapp.Fragment.DetailFragment;
@@ -43,7 +46,6 @@ public class StepActivity extends AppCompatActivity implements StepAdapter.CallB
         Bundle bundleD = new Bundle();
         bundleD.putSerializable("Step",mStep);
         bundleD.putInt("StepID" , mID);
-
         StepFragment sf = new StepFragment();
         if (savedInstanceState == null) {
             sf.setArguments(bundleD);
@@ -69,6 +71,10 @@ public class StepActivity extends AppCompatActivity implements StepAdapter.CallB
         if(fragment!=null){
             outState.putInt(BUNDLE_RECYCLER_LAYOUT, fragment.positionIndex);
         }
+
+
+
+
     }
 
 

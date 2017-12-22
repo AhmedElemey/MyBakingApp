@@ -19,8 +19,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
- <activity android:name=".Activity.StepActivity" />
-        <activity android:name=".Activity.IngredActivity" />
+        <activity android:name=".Activity.StepActivity">
+
+        </activity>
+        <activity android:name=".Activity.IngredActivity" >
+            <meta-data android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Activity.MainActivity"></meta-data>
+        </activity>
         <activity android:name=".Activity.DetailActivity" />
 
         <receiver android:name=".Widget.IngredientWidgetProvider">

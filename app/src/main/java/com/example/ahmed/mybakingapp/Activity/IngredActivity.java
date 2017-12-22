@@ -1,9 +1,12 @@
 package com.example.ahmed.mybakingapp.Activity;
 
+import android.content.Intent;
+import android.support.v4.app.NavUtils;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.MenuItem;
 
 import com.example.ahmed.mybakingapp.Adapter.IngredAdapter;
 import com.example.ahmed.mybakingapp.Model.Ingredients;
@@ -35,6 +38,8 @@ public class IngredActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ingred);
         ButterKnife.bind(this);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
 
         mIngredients = (ArrayList<Ingredients>) IngredActivity.this.getIntent().getExtras().getSerializable(INGREDIENT_DATA);
         mSteps = (ArrayList<Steps>) IngredActivity.this.getIntent().getExtras().getSerializable(STEP_DATA);
@@ -44,6 +49,16 @@ public class IngredActivity extends AppCompatActivity {
 
     }
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            // Respond to the action bar's Up/Home button
+            case android.R.id.home:
+                NavUtils.navigateUpFromSameTask(this);
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
 
     private void UpdateRecycle (ArrayList<Ingredients> mIngred , ArrayList<Steps> mStep) {
 

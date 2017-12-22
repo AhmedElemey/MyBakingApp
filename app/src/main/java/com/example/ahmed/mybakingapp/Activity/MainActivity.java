@@ -6,8 +6,10 @@ import android.support.annotation.VisibleForTesting;
 import android.support.test.espresso.IdlingResource;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v4.app.NavUtils;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.widget.Toast;
 
 import com.example.ahmed.mybakingapp.Fragment.DetailFragment;
@@ -79,6 +81,7 @@ public class MainActivity extends AppCompatActivity implements MainFragment.call
 
     }
 
+
     @Override
     public void onItemSelected(Recipe recipe) {
 
@@ -91,7 +94,6 @@ public class MainActivity extends AppCompatActivity implements MainFragment.call
             getSupportFragmentManager().beginTransaction()
                     .replace(R.id.DetailContainer, detailFragment)
                     .commit();
-
 
         } else {
             Intent intent = new Intent(this, DetailActivity.class)
