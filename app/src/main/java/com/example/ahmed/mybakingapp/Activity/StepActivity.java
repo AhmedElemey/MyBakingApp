@@ -13,12 +13,10 @@ import android.widget.Toast;
 import com.example.ahmed.mybakingapp.Adapter.StepAdapter;
 import com.example.ahmed.mybakingapp.Fragment.DetailFragment;
 import com.example.ahmed.mybakingapp.Fragment.StepFragment;
-import com.example.ahmed.mybakingapp.Model.Ingredients;
 import com.example.ahmed.mybakingapp.Model.Steps;
 import com.example.ahmed.mybakingapp.R;
 
 import java.util.ArrayList;
-
 
 
 public class StepActivity extends AppCompatActivity implements StepAdapter.CallBack , DetailFragment.CallBackAction{
@@ -68,34 +66,18 @@ public class StepActivity extends AppCompatActivity implements StepAdapter.CallB
     }
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-
-        switch (item.getItemId()) {
-
-            case android.R.id.home:
-                // app icon in action bar clicked; go home
-                Intent intentHome = new Intent(this, IngredActivity.class);
-                intentHome.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                startActivity(intentHome);
-                return true;
-
-            default:}
-        return super.onOptionsItemSelected(item);
-    }
-
-    @Override
     public void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
         if(fragment!=null){
             outState.putInt(BUNDLE_RECYCLER_LAYOUT, fragment.positionIndex);
         }
 
-
-
-
     }
-
-
+    @Override
+    public boolean onSupportNavigateUp(){
+        finish();
+        return true;
+    }
     @Override
     public void OnItemSelected(Bundle bundle ) {
 

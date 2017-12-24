@@ -22,13 +22,15 @@
         <activity android:name=".Activity.StepActivity">
             <meta-data android:name="android.support.PARENT_ACTIVITY"
                 android:value=".Activity.IngredActivity"></meta-data>
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Activity.IngredActivity" />
         </activity>
         <activity android:name=".Activity.IngredActivity" >
             <meta-data android:name="android.support.PARENT_ACTIVIT Y"
                 android:value=".Activity.MainActivity"></meta-data>
         </activity>
         <activity android:name=".Activity.DetailActivity" />
-
         <receiver android:name=".Widget.IngredientWidgetProvider">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />

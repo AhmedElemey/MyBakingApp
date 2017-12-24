@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import com.example.ahmed.mybakingapp.Adapter.IngredAdapter;
 import com.example.ahmed.mybakingapp.Model.Ingredients;
@@ -40,20 +41,20 @@ public class IngredActivity extends AppCompatActivity {
         ButterKnife.bind(this);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
+            mIngredients = (ArrayList<Ingredients>) IngredActivity.this.getIntent().getExtras().getSerializable(INGREDIENT_DATA);
+            mSteps = (ArrayList<Steps>) IngredActivity.this.getIntent().getExtras().getSerializable(STEP_DATA);
 
-        mIngredients = (ArrayList<Ingredients>) IngredActivity.this.getIntent().getExtras().getSerializable(INGREDIENT_DATA);
-        mSteps = (ArrayList<Steps>) IngredActivity.this.getIntent().getExtras().getSerializable(STEP_DATA);
 
 
         UpdateRecycle(mIngredients ,mSteps);
 
     }
 
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
 
     switch (item.getItemId()) {
-
         case android.R.id.home:
             // app icon in action bar clicked; go home
             Intent intentHome = new Intent(this, MainActivity.class);

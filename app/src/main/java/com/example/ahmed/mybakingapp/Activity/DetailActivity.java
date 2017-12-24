@@ -65,7 +65,6 @@ public class DetailActivity extends AppCompatActivity {
     }
 
 
-
     @Override
     public void onBackPressed() {
 
