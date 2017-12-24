@@ -51,13 +51,18 @@ public class IngredActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            // Respond to the action bar's Up/Home button
-            case android.R.id.home:
-                NavUtils.navigateUpFromSameTask(this);
-                return true;
-        }
-        return super.onOptionsItemSelected(item);
+
+    switch (item.getItemId()) {
+
+        case android.R.id.home:
+            // app icon in action bar clicked; go home
+            Intent intentHome = new Intent(this, MainActivity.class);
+            intentHome.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            startActivity(intentHome);
+            return true;
+
+        default:}
+            return super.onOptionsItemSelected(item);
     }
 
     private void UpdateRecycle (ArrayList<Ingredients> mIngred , ArrayList<Steps> mStep) {

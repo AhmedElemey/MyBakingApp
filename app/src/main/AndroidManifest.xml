@@ -20,10 +20,11 @@
             </intent-filter>
         </activity>
         <activity android:name=".Activity.StepActivity">
-
+            <meta-data android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Activity.IngredActivity"></meta-data>
         </activity>
         <activity android:name=".Activity.IngredActivity" >
-            <meta-data android:name="android.support.PARENT_ACTIVITY"
+            <meta-data android:name="android.support.PARENT_ACTIVIT Y"
                 android:value=".Activity.MainActivity"></meta-data>
         </activity>
         <activity android:name=".Activity.DetailActivity" />
